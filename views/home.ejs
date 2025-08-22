@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polls</title>
+</head>
+
+<body>
+    <h1>Welcome To Poll Management APP</h1>
+
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Poll Question</th>
+                <th>Poll Options</th>
+                <th>Poll Winner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% allPolls.forEach((poll,index)=> { %>
+                <tr>
+                    <!-- Serial Number -->
+                    <td>
+                        <%= index+1 %>
+                    </td>
+
+                    <!-- Poll Question -->
+                    <td>
+                        <%= poll.question %>
+                    </td>
+
+                    <!-- Poll Options -->
+                    <td>
+                        <% poll.options.forEach((opt)=> { %>
+                            <div>
+                                <%= opt.optionName %> ( <%= opt.count %> votes )
+                            </div>
+                            <% }) %>
+                    </td>
+
+                    <!-- Poll Winner -->
+                    <td>
+                        <% if (poll.options.length> 0) { 
+                            let winner = poll.options.reduce((max, opt) => opt.count > max.count ? opt : max); %>
+                            <%= winner.optionName %> ( <%= winner.count %> count ) 
+                        <% }else { %> No count yet <% } %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
