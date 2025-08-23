@@ -6,7 +6,7 @@ const pollRoute = require("./routes/poll");
 const app = express(); //Created Express Server
 const PORT = 8000; // Port on which the server is running
 
-
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json()) //middleware
 app.set("view engine","ejs");
 app.set("views",path.resolve("./views"));

@@ -1,0 +1,26 @@
+:root {
+    --primary-bg: #222831;
+    /* Dark background */
+    --secondary-bg: #393E46;
+    /* Slightly lighter section background */
+    --accent: #00ADB5;
+    /* Accent / highlight color */
+    --text-color: #EEEEEE;
+    /* Light text color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+}

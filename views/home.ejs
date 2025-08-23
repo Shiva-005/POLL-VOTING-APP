@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polls</title>
+    <title>Home</title>
 </head>
-
+<link rel="stylesheet" href="/css/style.css">
 <body>
     <h1>Welcome To Poll Management APP</h1>
 
@@ -43,10 +43,10 @@
 
                     <!-- Poll Winner -->
                     <td>
-                        <% if (poll.options.length> 0) { 
+                        <% if (poll.options.length> 0) {
                             let winner = poll.options.reduce((max, opt) => opt.count > max.count ? opt : max); %>
-                            <%= winner.optionName %> ( <%= winner.count %> count ) 
-                        <% }else { %> No count yet <% } %>
+                            <%= winner.optionName %> ( <%= winner.count %> count )
+                                    <% }else { %> No count yet <% } %>
                     </td>
                 </tr>
                 <% }) %>
