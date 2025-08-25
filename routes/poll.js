@@ -1,9 +1,13 @@
 const express = require("express");
-const {handleCreatePoll,handleShowAllPolls,handleShowRequestedPoll,handleVotePolls}=require("../controllers/poll");
+const {
+    handleCreatePoll,
+    handleShowAllPolls,
+    handleShowRequestedPoll,
+    handleVotePolls}=require("../controllers/poll");
 
 const router = express.Router();
 
-router.post("/create",handleCreatePoll);
+router.post("/",handleCreatePoll);
 
 router.get("/",handleShowAllPolls);
 
